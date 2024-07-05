@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Kreditur</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Daftar Kreditur Section -->
+            <div class="col-md-6">
+                <h1 class="mt-5">Daftar Kreditur</h1>
+                <form action="{{ url_for('add_kreditur') }}" method="POST" class="mt-3">
+                    <div class="form-group">
+                        <input type="text" name="nama" class="form-control" placeholder="Nama" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="kelayakan_usaha" class="form-control" placeholder="Kelayakan Usaha" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="kondisi_ekonomi" class="form-control" placeholder="Kondisi Ekonomi" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="karakter_nasabah" class="form-control" placeholder="Karakter Nasabah" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="jaminan_nasabah" class="form-control" placeholder="Jaminan Nasabah" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tambah Kreditur</button>
+                </form>
+            </div>
+
+            <!-- List Kreditur Section -->
+            <div class="col-md-6">
+                <h1 class="mt-5">List Kreditur</h1>
+                <table class="table table-striped mt-3">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Kelayakan Usaha</th>
+                            <th>Kondisi Ekonomi</th>
+                            <th>Karakter Nasabah</th>
+                            <th>Jaminan Nasabah</th>
+                            <th>Hasil AHP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for kreditur in krediturs %}
+                            <tr>
+                                <td>{{ kreditur.nama }}</td>
+                                <td>{{ kreditur.kelayakan_usaha }}</td>
+                                <td>{{ kreditur.kondisi_ekonomi }}</td>
+                                <td>{{ kreditur.karakter_nasabah }}</td>
+                                <td>{{ kreditur.jaminan_nasabah }}</td>
+                                <td>{{ results[kreditur.id] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
