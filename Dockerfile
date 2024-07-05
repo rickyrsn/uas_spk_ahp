@@ -15,9 +15,11 @@ COPY . .
 
 # Set environment variable untuk Flask
 ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=5000
 
 # Expose port yang akan digunakan oleh Flask
 EXPOSE 5000
 
 # Perintah untuk menjalankan aplikasi
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
