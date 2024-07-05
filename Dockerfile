@@ -13,6 +13,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy seluruh isi proyek ke working directory
 COPY . .
 
+# Eksekusi migrasi database
+# RUN flask db init
+# RUN flask db migrate -m "Initial migration"
+# RUN flask db upgrade
+
 # Set environment variable untuk Flask
 ENV FLASK_APP=app.py
 
