@@ -18,7 +18,7 @@ ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_RUN_PORT=5000
 
-RUN flask db init || true && flask db migrate -m 'Initial migration' || true && flask db upgrade || true
+# RUN flask db init || true && flask db migrate -m 'Initial migration' || true && flask db upgrade || true
 
 # Expose port yang akan digunakan oleh Flask
 EXPOSE 5000
