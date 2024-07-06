@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from models import db, Kreditur  # Import db dan model Kreditur dari models.py
 from ahpy import Compare
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db.init_app(app)
+migrate = Migrate(app, db)  # Inisialisasi Flask-Migrate
 
-# Menambahkan kode untuk membuat tabel-tabel saat aplikasi dimulai
 @app.before_first_request
 def create_tables():
     db.create_all()
@@ -16,6 +17,7 @@ def create_tables():
 def index():
     kreditur_list = Kreditur.query.all()
     results = []
+    process_details = []
     if kreditur_list:
         data = []
         for kreditur in kreditur_list:
@@ -58,8 +60,15 @@ def index():
             })
 
         results.sort(key=lambda x: x['skor'], reverse=True)
+        
+        # Add process details for each step
+        process_details = {
+            'pairwise_comparisons': pairwise_comparisons,
+            'priority_weights': priority_weights,
+            'data': data
+        }
 
-    return render_template('index.html', kreditur_list=kreditur_list, results=results)
+    return render_template('index.html', kreditur_list=kreditur_list, results=results, process_details=process_details)
 
 @app.route('/input', methods=['POST'])
 def input_data():
