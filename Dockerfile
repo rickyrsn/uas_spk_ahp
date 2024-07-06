@@ -24,4 +24,4 @@ ENV FLASK_RUN_PORT=5000
 EXPOSE 5000
 
 # Perintah untuk menjalankan aplikasi
-CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:5000 --workers 3 app:app"]
+CMD ["sh", "-c", "flask run --host=0.0.0.0 --port=5000"]
