@@ -48,7 +48,7 @@
                     <div class="card-header">Hasil Perhitungan AHP</div>
                     <div class="card-body">
                         <table class="table table-striped table-hover">
-                            <thead>
+                            <thead class="text-center">
                                 <tr>
                                     <th>Nama</th>
                                     <th>Kelayakan Usaha</th>
@@ -58,7 +58,7 @@
                                     <th>Skor</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="text-center">
                                 {% for result in results %}
                                 <tr>
                                     <td>{{ result.nama }}</td>
@@ -75,10 +75,36 @@
                 </div>
             </div>
         </div>
+        
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">Detail Proses AHP</div>
+                    <div class="card-body">
+                        <h3>Pairwise Comparisons</h3>
+                        <ul>
+                            {% for pair, value in process_details.pairwise_comparisons.items() %}
+                            <li>{{ pair }}: {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                        
+                        <h3>Priority Weights</h3>
+                        <ul>
+                            {% for criterion, weight in process_details.priority_weights.items() %}
+                            <li>{{ criterion }}: {{ weight }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <footer>
+    <footer class="text-center mt-4">
         <p>&copy; 2024 Nama: Ricky Sutjipto Nurdjaya | NIM: 201011450483 | Kelas: 07TPLE004 | UAS Sistem Penunjang Keputusan</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
