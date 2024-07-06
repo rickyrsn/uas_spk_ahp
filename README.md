@@ -42,12 +42,12 @@ Open a web browser and go to http://localhost:5000.
 
 ## Usage
 
-1. Input Data:
+### 1. Input Data:
   - Navigate to the home page.
   - Fill out the form to input creditor details including business feasibility, economic conditions, character, and collateral.
   - Click on "Submit" to save the data.
 
-2. View Results:
+### 2. View Results:
   - The system automatically calculates the score based on AHP weights.
   - Results are displayed in a table, sorted by the calculated score.
 
