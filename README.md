@@ -10,14 +10,10 @@
 - [Demo](#demo)
 - [About the Project](#about-the-project)
   - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Demo
 Insert demo link or screenshots here.
@@ -37,7 +33,7 @@ The system utilizes Flask for the web framework, SQLAlchemy for database managem
 
 ```sh
 git clone https://github.com/rickyrsn/uas_spk_ahp.git
-cd your-repository
+cd uas_spk_ahp
 pip install -r requirements.txt
 python app.py
 
