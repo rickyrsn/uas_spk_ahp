@@ -22,4 +22,4 @@ ENV FLASK_RUN_PORT=5000
 EXPOSE 5000
 
 # Perintah untuk menjalankan aplikasi
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["sh", "-c", "flask db upgrade && exec gunicorn --bind 0.0.0.0:5000 --workers 3 app:app"]
