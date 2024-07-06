@@ -1,11 +1,9 @@
 # Sistem Penunjang Keputusan Kreditur Berbasis AHP
 
-![GitHub repo size](https://img.shields.io/github/repo-size/your-username/your-repository)
-![GitHub contributors](https://img.shields.io/github/contributors/your-username/your-repository)
-![GitHub stars](https://img.shields.io/github/stars/your-username/your-repository?style=social)
-![GitHub forks](https://img.shields.io/github/forks/your-username/your-repository?style=social)
-
-Deskripsi singkat tentang aplikasi atau proyek Anda.
+![GitHub repo size](https://img.shields.io/github/repo-size/rickyrsn/uas_spk_ahp)
+![GitHub contributors](https://img.shields.io/github/contributors/rickyrsn/uas_spk_ahp)
+![GitHub stars](https://img.shields.io/github/stars/rickyrsn/uas_spk_ahp?style=social)
+![GitHub forks](https://img.shields.io/github/forks/rickyrsn/uas_spk_ahp?style=social)
 
 ## Table of Contents
 
@@ -22,12 +20,12 @@ Deskripsi singkat tentang aplikasi atau proyek Anda.
 - [Contact](#contact)
 
 ## Demo
-
-Tentang bagian ini, Anda bisa menambahkan deskripsi singkat, tautan ke demo live (jika ada), atau screenshot dari aplikasi.
+Insert demo link or screenshots here.
 
 ## About the Project
+This project implements an Analytic Hierarchy Process (AHP)-based decision support system for evaluating creditors. It allows users to input various criteria such as business feasibility, economic conditions, character, and collateral to assess and rank creditors based on their suitability.
 
-Deskripsi mendalam tentang proyek ini dan apa tujuan dari proyek ini. Anda juga bisa menyertakan informasi mengenai teknologi atau alat yang digunakan.
+The system utilizes Flask for the web framework, SQLAlchemy for database management with SQLite, and integrates AHP calculations using the AHPy library.
 
 ### Built With
 
@@ -35,41 +33,41 @@ Deskripsi mendalam tentang proyek ini dan apa tujuan dari proyek ini. Anda juga 
 - [SQLite](https://www.sqlite.org/)
 - [Bootstrap](https://getbootstrap.com/)
 
-## Getting Started
-
-Petunjuk untuk menginstal dan menjalankan aplikasi Anda. Pastikan untuk memberikan instruksi yang jelas dan lengkap.
-
-### Prerequisites
-
-Apa yang harus diinstal sebelum menggunakan aplikasi ini.
-
 ### Installation
 
-Langkah-langkah instalasi aplikasi, termasuk contoh perintah jika diperlukan.
-
 ```sh
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/rickyrsn/uas_spk_ahp.git
 cd your-repository
 pip install -r requirements.txt
 python app.py
+
+Open a web browser and go to http://localhost:5000.
 ```
 
 ## Usage
 
-Cara menggunakan aplikasi atau contoh penggunaan.
+1. Input Data:
+  - Navigate to the home page.
+  - Fill out the form to input creditor details including business feasibility, economic conditions, character, and collateral.
+  - Click on "Submit" to save the data.
+
+2. View Results:
+  - The system automatically calculates the score based on AHP weights.
+  - Results are displayed in a table, sorted by the calculated score.
 
 ## Roadmap
 
-Rencana pengembangan dan fitur yang akan datang.
+- Enhance UI/UX design.
+- Implement user authentication and authorization.
+- Add export functionalities for reports.
+- Integrate more advanced AHP features.
 
 ## Contributing
 
-Instruksi untuk berkontribusi ke proyek Anda jika Anda menerima kontribusi dari komunitas.
+Contributions are welcome! Follow these steps to contribute:
 
-## License
-
-Informasi tentang lisensi proyek Anda.
-
-## Contact
-
-Cara terbaik untuk menghubungi Anda.
+- Fork the repository.
+- Create a new branch (git checkout -b feature/your-feature).
+- Commit your changes (git commit -am 'Add some feature').
+- Push to the branch (git push origin feature/your-feature).
+- Create a new Pull Request.
