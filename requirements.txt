@@ -6,3 +6,4 @@ SQLAlchemy==1.4.23
 numpy==1.21.0
 gunicorn==22.0.0
 flask-migrate
+setuptools
